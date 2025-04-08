@@ -63,7 +63,7 @@ print(f"Results: {result}")
 
 Want to contribute? Check out the following:
 
-- [📄 Contributor Guide](CONTRIBUTING.md)
+- [📄 Contributor Guide](/docs/en/CONTRIBUTING.md)
 
 We welcome all ideas, suggestions, and improvements!
 
