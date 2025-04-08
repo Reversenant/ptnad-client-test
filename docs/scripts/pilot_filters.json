@@ -1,0 +1,554 @@
+{
+    "filters": [
+      {
+        "category": {
+          "ru": "Протоколы",
+          "en": "Protocols"
+        },
+        "name": {
+          "ru": "Telnet",
+          "en": "Telnet"
+        },
+        "filter": "alert.pr == 1 AND alert.msg ~ '*PTsecurity*'"
+      },
+      {
+        "category": {
+          "ru": "Протоколы",
+          "en": "Protocols"
+        },
+        "name": {
+          "ru": "HTTP не на 80 (ext.)",
+          "en": "HTTP not on 80 (ext.)"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Протоколы",
+          "en": "Protocols"
+        },
+        "name": {
+          "ru": "TLS не на 443 (ext.)",
+          "en": "TLS not on 443 (ext.)"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Протоколы",
+          "en": "Protocols"
+        },
+        "name": {
+          "ru": "53 порт не по DNS",
+          "en": "port 53 but not DNS"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Данные",
+          "en": "Data"
+        },
+        "name": {
+          "ru": "Сессии с файлами",
+          "en": "Sessions with files"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Данные",
+          "en": "Data"
+        },
+        "name": {
+          "ru": "Поиск по названию файла",
+          "en": "Search file by name"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Данные",
+          "en": "Data"
+        },
+        "name": {
+          "ru": "Bittorrent",
+          "en": "Bittorrent"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Данные",
+          "en": "Data"
+        },
+        "name": {
+          "ru": "Учётные данные",
+          "en": "Valid credentials"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Данные",
+          "en": "Data"
+        },
+        "name": {
+          "ru": "Почтовые учётные данные",
+          "en": "Email credentials"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Данные",
+          "en": "Data"
+        },
+        "name": {
+          "ru": "Почтовые клиенты",
+          "en": "Email clients"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Данные",
+          "en": "Data"
+        },
+        "name": {
+          "ru": "Почта в открытую (ext.)",
+          "en": "Not encrypted email (ext.)"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Данные",
+          "en": "Data"
+        },
+        "name": {
+          "ru": "Авторизация в HTTP",
+          "en": "HTTP authorization"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Данные",
+          "en": "Data"
+        },
+        "name": {
+          "ru": "Авторизация в FTP",
+          "en": "FTP authorization"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Анонимность",
+          "en": "Anonymity"
+        },
+        "name": {
+          "ru": "OpenVPN",
+          "en": "OpenVPN"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Анонимность",
+          "en": "Anonymity"
+        },
+        "name": {
+          "ru": "SOCKS5",
+          "en": "SOCKS5"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Анонимность",
+          "en": "Anonymity"
+        },
+        "name": {
+          "ru": "FriGate Proxy",
+          "en": "FriGate Proxy"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Анонимность",
+          "en": "Anonymity"
+        },
+        "name": {
+          "ru": "TOR",
+          "en": "TOR"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Сеть",
+          "en": "Network"
+        },
+        "name": {
+          "ru": "Трафик без доменного имени",
+          "en": "No domain name"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Сеть",
+          "en": "Network"
+        },
+        "name": {
+          "ru": "Нестандартные порты",
+          "en": "Non-standard ports"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Веб",
+          "en": "Web"
+        },
+        "name": {
+          "ru": "Digital Ocean",
+          "en": "Digital Ocean"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Веб",
+          "en": "Web"
+        },
+        "name": {
+          "ru": "POST запрос с ответом 200",
+          "en": "POST with response 200"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Веб",
+          "en": "Web"
+        },
+        "name": {
+          "ru": "POST без реферера (ext.)",
+          "en": "POST without referer (ext.)"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Веб",
+          "en": "Web"
+        },
+        "name": {
+          "ru": "Загрузка MSI",
+          "en": "MSI download"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Веб",
+          "en": "Web"
+        },
+        "name": {
+          "ru": "HTTP через CMD / Powershell",
+          "en": "HTTP over CMD / Powershell"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Веб",
+          "en": "Web"
+        },
+        "name": {
+          "ru": "Python запрос HTTP",
+          "en": "Python HTTP query"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Веб",
+          "en": "Web"
+        },
+        "name": {
+          "ru": "Запуск webshell",
+          "en": "Webshell launch"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Мессенджеры",
+          "en": "Messengers"
+        },
+        "name": {
+          "ru": "Telegram",
+          "en": "Telegram"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Мессенджеры",
+          "en": "Messengers"
+        },
+        "name": {
+          "ru": "Viber",
+          "en": "Viber"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Домен",
+          "en": "Domain"
+        },
+        "name": {
+          "ru": "Авторизация по LDAP",
+          "en": "LDAP authorization"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Домен",
+          "en": "Domain"
+        },
+        "name": {
+          "ru": "NetBios и link-local",
+          "en": "NetBios and link-local"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Удаленное управление",
+          "en": "Remote access"
+        },
+        "name": {
+          "ru": "TeamViewer 1",
+          "en": "TeamViewer 1"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Удаленное управление",
+          "en": "Remote access"
+        },
+        "name": {
+          "ru": "Teamviewer 2",
+          "en": "Teamviewer 2"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Удаленное управление",
+          "en": "Remote access"
+        },
+        "name": {
+          "ru": "AeroAdmin",
+          "en": "AeroAdmin"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Удаленное управление",
+          "en": "Remote access"
+        },
+        "name": {
+          "ru": "RemoteUtils",
+          "en": "RemoteUtils"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Удаленное управление",
+          "en": "Remote access"
+        },
+        "name": {
+          "ru": "RMS Remote",
+          "en": "RMS Remote"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Удаленное управление",
+          "en": "Remote access"
+        },
+        "name": {
+          "ru": "AMMYY RAT",
+          "en": "AMMYY RAT"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "Реп. списки и правила",
+          "en": "PT rules triggered"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "Сработки MultiScanner",
+          "en": "MultiScanner triggered"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "Майнеры",
+          "en": "Miners"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "Соединения с DGA доменами",
+          "en": "DGA domain connections"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "Подмена DNS",
+          "en": "DNS spoofing"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "MetaSploit",
+          "en": "MetaSploit"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "Bruteforce MySQL",
+          "en": "Bruteforce MySQL"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "Wordpress Bruteforce",
+          "en": "Wordpress Bruteforce"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "Создание PsExec",
+          "en": "PsExec created"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "Старт PsExec",
+          "en": "PsExec started"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "Zgrab Banner Grabber",
+          "en": "Zgrab Banner Grabber"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "HTTP через WScript.Shell",
+          "en": "HTTP over WScript.Shell"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "Доступ через WinRM",
+          "en": "Access over WinRM"
+        },
+        "filter": ""
+      },
+      {
+        "category": {
+          "ru": "Атаки",
+          "en": "Attacks"
+        },
+        "name": {
+          "ru": "Попытка кражи тикета KRBTGT",
+          "en": "KRBTGT stealing attempt"
+        },
+        "filter": ""
+      }
+    ]
+  }
