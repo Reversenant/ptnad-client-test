@@ -1,0 +1,77 @@
+site_name: TEST-NAD
+site_url: https://reversenant.github.io/test-nad/
+docs_dir: docs
+use_directory_urls: true
+theme:
+  name: material
+  font: false
+  palette:
+    primary: blue
+  features:
+    - navigation.expand
+    - navigation.sections
+    - navigation.tabs
+    - toc.follow
+    - toc.integrate
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["src"]
+          import:
+            - https://docs.python.org/3/objects.inv
+          options:
+            docstring_section_style: table
+            docstring_style: "numpy"
+            filters: ["!^_"]
+            heading_level: 1
+            merge_init_into_class: true
+            parameter_headings: true
+            separate_signature: true
+            show_root_heading: true
+            show_signature_annotations: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            summary: true
+            show_source: true
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: ru
+          name: Русский
+          build: true
+
+nav:
+  - Home: index.md
+  - Contributing: CONTRIBUTING.md
+  - Code Reference: 
+    - Init: reference/index.md
+    - Auth: reference/auth.md
+    - Client: reference/client.md
+    - Exception: reference/exceptions.md
+    - API:
+      - Init: reference/api/index.md
+      - BQL: reference/api/bql.md
+      - Monitoring: reference/api/monitoring.md
+      - Replists: reference/api/replists.md
+      - Signatures: reference/api/signatures.md
