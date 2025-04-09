@@ -9,7 +9,7 @@
           "ru": "Telnet",
           "en": "Telnet"
         },
-        "filter": "alert.pr == 1 AND alert.msg ~ '*PTsecurity*'"
+        "filter": "app_proto == 'telnet'"
       },
       {
         "category": {
@@ -20,7 +20,7 @@
           "ru": "HTTP не на 80 (ext.)",
           "en": "HTTP not on 80 (ext.)"
         },
-        "filter": ""
+        "filter": "app_proto == 'http' && dst.port != 80 && dst.groups != 'HOME_NET'"
       },
       {
         "category": {
@@ -31,7 +31,7 @@
           "ru": "TLS не на 443 (ext.)",
           "en": "TLS not on 443 (ext.)"
         },
-        "filter": ""
+        "filter": "app_proto == 'tls' && dst.port != 443 && dst.groups != 'HOME_NET'"
       },
       {
         "category": {
@@ -42,7 +42,7 @@
           "ru": "53 порт не по DNS",
           "en": "port 53 but not DNS"
         },
-        "filter": ""
+        "filter": "dst.port == 53 && app_proto != 'dns' && (flags == 'FINISHED' && !(flags == 'MISSED_START' || flags == 'MISSED_END')) && pkts.recv > 0"
       },
       {
         "category": {
@@ -53,7 +53,7 @@
           "ru": "Сессии с файлами",
           "en": "Sessions with files"
         },
-        "filter": ""
+        "filter": "files"
       },
       {
         "category": {
@@ -64,7 +64,7 @@
           "ru": "Поиск по названию файла",
           "en": "Search file by name"
         },
-        "filter": ""
+        "filter": "files.filename ~ '*amd64.deb'"
       },
       {
         "category": {
@@ -75,7 +75,7 @@
           "ru": "Bittorrent",
           "en": "Bittorrent"
         },
-        "filter": ""
+        "filter": "app_proto == bittorrent and src.groups == 'HOME_NET'"
       },
       {
         "category": {
@@ -86,7 +86,7 @@
           "ru": "Учётные данные",
           "en": "Valid credentials"
         },
-        "filter": ""
+        "filter": "credentials.valid == 1"
       },
       {
         "category": {
@@ -97,7 +97,7 @@
           "ru": "Почтовые учётные данные",
           "en": "Email credentials"
         },
-        "filter": ""
+        "filter": "(app_proto == 'smtp' || app_proto == 'pop3' || app_proto == 'imap') && credentials.valid == 1"
       },
       {
         "category": {
@@ -108,7 +108,7 @@
           "ru": "Почтовые клиенты",
           "en": "Email clients"
         },
-        "filter": ""
+        "filter": "credentials.password and (app_proto == 'smtp' or app_proto == 'pop3' or app_proto == 'imap') and src.groups == 'EXTERNAL_NET' && dst.groups == 'HOME_NET' and credentials.valid == 1"
       },
       {
         "category": {
@@ -119,7 +119,7 @@
           "ru": "Почта в открытую (ext.)",
           "en": "Not encrypted email (ext.)"
         },
-        "filter": ""
+        "filter": "(app_proto == 'smtp' || app_proto == 'pop3' || app_proto == 'imap') && !(smtp.rqs.cmd.name == 'STARTTLS' || pop3.rqs.cmd.name == 'STLS' || imap.rqs.cmd.name == 'STARTTLS') && dst.groups != 'HOME_NET'"
       },
       {
         "category": {
@@ -130,7 +130,7 @@
           "ru": "Авторизация в HTTP",
           "en": "HTTP authorization"
         },
-        "filter": ""
+        "filter": "credentials.valid == 1 and credentials.password != '' and app_proto == 'http' and dst.groups == 'HOME_NET'"
       },
       {
         "category": {
@@ -141,7 +141,7 @@
           "ru": "Авторизация в FTP",
           "en": "FTP authorization"
         },
-        "filter": ""
+        "filter": "credentials.valid == 1 and credentials.password != '' and app_proto == 'ftp' and dst.groups == 'HOME_NET'"
       },
       {
         "category": {
@@ -152,7 +152,7 @@
           "ru": "OpenVPN",
           "en": "OpenVPN"
         },
-        "filter": ""
+        "filter": "app_proto == openvpn"
       },
       {
         "category": {
@@ -163,7 +163,7 @@
           "ru": "SOCKS5",
           "en": "SOCKS5"
         },
-        "filter": ""
+        "filter": "app_proto == 'socks5' and credentials.login"
       },
       {
         "category": {
@@ -174,7 +174,7 @@
           "ru": "FriGate Proxy",
           "en": "FriGate Proxy"
         },
-        "filter": ""
+        "filter": "alert.msg == 'APP [PTsecurity] FriGate Proxy'"
       },
       {
         "category": {
@@ -185,7 +185,7 @@
           "ru": "TOR",
           "en": "TOR"
         },
-        "filter": ""
+        "filter": "(rpt.cat == 'tor-relays' && app_proto == 'tls' and rpt.where == 'flow.dst') or alert.msg ~ '*[PTsecurity]*TOR*'"
       },
       {
         "category": {
@@ -196,7 +196,7 @@
           "ru": "Трафик без доменного имени",
           "en": "No domain name"
         },
-        "filter": ""
+        "filter": "dst.groups != 'HOME_NET' && !dst.dns"
       },
       {
         "category": {
@@ -207,7 +207,7 @@
           "ru": "Нестандартные порты",
           "en": "Non-standard ports"
         },
-        "filter": ""
+        "filter": "src.groups != 'HOME_NET' && dst.port != 80 && dst.port != 443 && dst.port != 25 && src.port != 53 && src.port != 443 && src.port != 123 && (flags == 'FINISHED' && !(flags == 'MISSED_START' || flags == 'MISSED_END')) && pkts.recv > 0"
       },
       {
         "category": {
@@ -218,7 +218,7 @@
           "ru": "Digital Ocean",
           "en": "Digital Ocean"
         },
-        "filter": ""
+        "filter": "dst.geo.org == 'DigitalOcean, LLC' || dst.geo.org == 'Amazon.com, Inc.'"
       },
       {
         "category": {
@@ -229,7 +229,7 @@
           "ru": "POST запрос с ответом 200",
           "en": "POST with response 200"
         },
-        "filter": ""
+        "filter": "http(rqs.method==POST && rsp.code==200)"
       },
       {
         "category": {
@@ -240,7 +240,7 @@
           "ru": "POST без реферера (ext.)",
           "en": "POST without referer (ext.)"
         },
-        "filter": ""
+        "filter": "app_proto == 'http' && http(rqs.method == 'POST' && !rqs.Referer) && dst.groups != 'HOME_NET'"
       },
       {
         "category": {
@@ -251,7 +251,7 @@
           "ru": "Загрузка MSI",
           "en": "MSI download"
         },
-        "filter": ""
+        "filter": "alert.msg == 'POLICY [PTsecurity] Executable application_x-msi Download'"
       },
       {
         "category": {
@@ -262,7 +262,7 @@
           "ru": "HTTP через CMD / Powershell",
           "en": "HTTP over CMD / Powershell"
         },
-        "filter": ""
+        "filter": "alert.msg == 'SUSPICIOUS [PTsecurity] CMD/Powershell.Download HTTPHeader (WIN7)'"
       },
       {
         "category": {
@@ -273,7 +273,7 @@
           "ru": "Python запрос HTTP",
           "en": "Python HTTP query"
         },
-        "filter": ""
+        "filter": "alert.msg == 'SUSPICIOUS [PTsecurity] Python Request HTTP Header'"
       },
       {
         "category": {
@@ -284,7 +284,7 @@
           "ru": "Запуск webshell",
           "en": "Webshell launch"
         },
-        "filter": ""
+        "filter": "alert.msg == 'SHELL [PTsecurity] Possible webshell: WGET command in POST body'"
       },
       {
         "category": {
@@ -295,7 +295,7 @@
           "ru": "Telegram",
           "en": "Telegram"
         },
-        "filter": ""
+        "filter": "alert.msg == 'APP [PTsecurity] Telegram Messenger v3 HTTP' || alert.msg == 'APP [PTsecurity] Telegram Messenger v2' || alert.msg == 'APP [PTsecurity] Telegram Messenger'"
       },
       {
         "category": {
@@ -306,7 +306,7 @@
           "ru": "Viber",
           "en": "Viber"
         },
-        "filter": ""
+        "filter": "alert.msg == 'APP [PTsecurity] VIBER messenger connection'"
       },
       {
         "category": {
@@ -317,7 +317,7 @@
           "ru": "Авторизация по LDAP",
           "en": "LDAP authorization"
         },
-        "filter": ""
+        "filter": "credentials.password and app_proto == 'ldap'"
       },
       {
         "category": {
@@ -328,7 +328,7 @@
           "ru": "NetBios и link-local",
           "en": "NetBios and link-local"
         },
-        "filter": ""
+        "filter": "app_proto == 'nbns' or app_proto == 'llmnr'"
       },
       {
         "category": {
@@ -339,7 +339,7 @@
           "ru": "TeamViewer 1",
           "en": "TeamViewer 1"
         },
-        "filter": ""
+        "filter": "dst.dns ~ '*.teamviewer.com'"
       },
       {
         "category": {
@@ -350,7 +350,7 @@
           "ru": "Teamviewer 2",
           "en": "Teamviewer 2"
         },
-        "filter": ""
+        "filter": "app_proto == teamviewer"
       },
       {
         "category": {
@@ -361,7 +361,7 @@
           "ru": "AeroAdmin",
           "en": "AeroAdmin"
         },
-        "filter": ""
+        "filter": "alert.msg == 'REMOTE [PTsecurity] AeroAdmin'"
       },
       {
         "category": {
@@ -372,7 +372,7 @@
           "ru": "RemoteUtils",
           "en": "RemoteUtils"
         },
-        "filter": ""
+        "filter": "alert.msg == 'REMOTE [PTsecurity] LiteManager.RemoteUtilities'"
       },
       {
         "category": {
@@ -383,7 +383,7 @@
           "ru": "RMS Remote",
           "en": "RMS Remote"
         },
-        "filter": ""
+        "filter": "alert.msg == 'REMOTE [PTsecurity] RMS.Remote Utilities Access Tool'"
       },
       {
         "category": {
@@ -394,7 +394,7 @@
           "ru": "AMMYY RAT",
           "en": "AMMYY RAT"
         },
-        "filter": ""
+        "filter": "alert.msg == 'REMOTE [PTsecurity] AMMYY RAT'"
       },
       {
         "category": {
@@ -405,7 +405,7 @@
           "ru": "Реп. списки и правила",
           "en": "PT rules triggered"
         },
-        "filter": ""
+        "filter": "rpt.cat && alert"
       },
       {
         "category": {
@@ -416,7 +416,7 @@
           "ru": "Сработки MultiScanner",
           "en": "MultiScanner triggered"
         },
-        "filter": ""
+        "filter": "rpt.type == 'ms'"
       },
       {
         "category": {
@@ -427,7 +427,7 @@
           "ru": "Майнеры",
           "en": "Miners"
         },
-        "filter": ""
+        "filter": "rpt.cat == 'miners'"
       },
       {
         "category": {
@@ -438,7 +438,7 @@
           "ru": "Соединения с DGA доменами",
           "en": "DGA domain connections"
         },
-        "filter": ""
+        "filter": "rpt.cat == 'dga' && app_proto != 'dns'"
       },
       {
         "category": {
@@ -449,7 +449,7 @@
           "ru": "Подмена DNS",
           "en": "DNS spoofing"
         },
-        "filter": ""
+        "filter": "app_proto == dns and rpt.cat == 'sinkholes'"
       },
       {
         "category": {
@@ -460,7 +460,7 @@
           "ru": "MetaSploit",
           "en": "MetaSploit"
         },
-        "filter": ""
+        "filter": "alert.msg ~ 'METASPLOIT [PTsecurity]*'"
       },
       {
         "category": {
@@ -471,7 +471,7 @@
           "ru": "Bruteforce MySQL",
           "en": "Bruteforce MySQL"
         },
-        "filter": ""
+        "filter": "alert.msg == 'LOGIN [PTsecurity] MySQL login bruteforce (20 in a minute)'"
       },
       {
         "category": {
@@ -482,7 +482,7 @@
           "ru": "Wordpress Bruteforce",
           "en": "Wordpress Bruteforce"
         },
-        "filter": ""
+        "filter": "alert.msg == 'LOGIN [PTsecurity] Wordpress XMLRPC Login Bruteforce (wp.getUsersBlogs)'"
       },
       {
         "category": {
@@ -493,7 +493,7 @@
           "ru": "Создание PsExec",
           "en": "PsExec created"
         },
-        "filter": ""
+        "filter": "alert.msg == 'ATTACK AD [PTsecurity] SCM Create remote service'"
       },
       {
         "category": {
@@ -504,7 +504,7 @@
           "ru": "Старт PsExec",
           "en": "PsExec started"
         },
-        "filter": ""
+        "filter": "alert.msg == 'ATTACK AD [PTsecurity] SCM Start of remote service'"
       },
       {
         "category": {
@@ -515,7 +515,7 @@
           "ru": "Zgrab Banner Grabber",
           "en": "Zgrab Banner Grabber"
         },
-        "filter": ""
+        "filter": "alert.msg == 'SCAN [PTsecurity] zgrab Banner Grabber User-Agent Detected'"
       },
       {
         "category": {
@@ -526,7 +526,7 @@
           "ru": "HTTP через WScript.Shell",
           "en": "HTTP over WScript.Shell"
         },
-        "filter": ""
+        "filter": "alert.msg == 'ATTACK [PTsecurity] WScript.Shell Run HTML Code Execution Attempt'"
       },
       {
         "category": {
@@ -537,7 +537,7 @@
           "ru": "Доступ через WinRM",
           "en": "Access over WinRM"
         },
-        "filter": ""
+        "filter": "alert.msg == 'ATTACK [PTsecurity] Remote access via WinRM'"
       },
       {
         "category": {
@@ -548,7 +548,7 @@
           "ru": "Попытка кражи тикета KRBTGT",
           "en": "KRBTGT stealing attempt"
         },
-        "filter": ""
+        "filter": "alert.msg == 'ATTACK AD [PTsecurity] Malicious DCSync. KRBTGT Ticket Stealing attempt'"
       }
     ]
   }
