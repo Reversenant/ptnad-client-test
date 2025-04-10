@@ -95,6 +95,7 @@ plugins:
 nav:
   - Home: index.md
   - Contributing: CONTRIBUTING.md
+  - DCO: DCO.md
   - Code Reference: 
     - Init: reference/index.md
     - Auth: reference/auth.md

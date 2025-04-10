@@ -1,6 +1,3 @@
-"""
-This module provides functions to retrieve repository lists or similar data from the PTNAD API.
-"""
 import re
 from typing import List, Dict, Any, Optional
 from ..exceptions import PTNADAPIError, ValidationError

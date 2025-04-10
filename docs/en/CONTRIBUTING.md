@@ -41,7 +41,7 @@ We aim to make the project accessible to as many people as possible. If you'd li
 - 🇷🇺 Russian (in progress)
 - 🌐 Your language? Help us add it!
 
-Create a corresponding issue.
+To get started, simply [create an issue](https://github.com/Reversenant/ptnad-client-test/issues) to let us know.
 
 ## 🛠 Best Practices
 

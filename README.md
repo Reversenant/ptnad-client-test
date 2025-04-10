@@ -1,10 +1,10 @@
 ![image](https://github.com/Reversenant/ptnad-client-test/raw/main/docs/assets/logo_with_text.svg)
 
-![PyPI](https://img.shields.io/pypi/v/ptnad)
+![PyPI](https://img.shields.io/pypi/v/ptnad-client-test)
 
 # PT NAD Client
 
-**Documentation**: <a href="https://reversenant.github.io/ptnad-client/">https://reversenant.github.io/ptnad-client/</a>
+**Documentation**: <a href="https://reversenant.github.io/ptnad-client-test/">https://reversenant.github.io/ptnad-client-test/</a>
 
 **Source Code**: <a href="https://github.com/reversenant/ptnad-client-test">https://github.com/reversenant/ptnad-client-test</a>
 

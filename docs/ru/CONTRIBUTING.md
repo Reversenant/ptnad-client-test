@@ -41,7 +41,7 @@ docs: обновлена документация
 - 🇷🇺 Русский (в процессе)
 - 🌐 Ваш язык? Помогите нам добавить!
 
-Создайте соответствующий issue
+Чтобы начать, просто [создайте issue](https://github.com/Reversenant/ptnad-client-test/issues) и сообщите нам.
 
 ## 🛠 Best Practices
 

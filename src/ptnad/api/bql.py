@@ -1,6 +1,3 @@
-"""
-This module provides functions to interact with the BQL API endpoints.
-"""
 from typing import Dict, Any, Optional
 from ..exceptions import PTNADAPIError, ValidationError
 

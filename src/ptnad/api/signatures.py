@@ -1,7 +1,3 @@
-"""
-SignaturesAPI provides a client interface for managing signature rules via REST API.
-Supports retrieval, filtering, updating, statistics, and applying or reverting rule changes.
-"""
 from typing import List, Dict, Any, Optional
 from ..exceptions import PTNADAPIError, ValidationError
 

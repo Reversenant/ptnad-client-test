@@ -1,6 +1,3 @@
-"""
-This module provides functionality to monitor the PTNAD system via API endpoints.
-"""
 from ..exceptions import PTNADAPIError
 from typing import List, Dict, Any, Optional
 from enum import Enum

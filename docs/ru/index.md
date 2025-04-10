@@ -1,12 +1,12 @@
 ![image](../assets/logo_with_text.svg)
 
-![PyPI](https://img.shields.io/pypi/v/ptnad)
+![PyPI](https://img.shields.io/pypi/v/ptnad-client-test)
 
 # PT NAD Client
 
-**Документация**: <a href="https://reversenant/test-nad">https://reversenant/test-nad</a>
+**Документация**: <a href="https://reversenant.github.io/ptnad-client-test/">https://reversenant.github.io/ptnad-client-test/</a>
 
-**Исходный код**: <a href="https://github.com/reversenant/test-nad">https://github.com/reversenant/test-nad</a>
+**Исходный код**: <a href="https://github.com/reversenant/ptnad-client-test">https://github.com/reversenant/ptnad-client-test</a>
 
 ---
 
@@ -30,7 +30,9 @@ query = "SELECT src.ip, dst.ip, proto FROM flow WHERE end > 2025.02.25 and end <
 result = client.bql.execute(query)
 print(f"Результаты: {result}")
 ```
-![image](../assets/pic_left.svg)
+
+С подробными инструкциями и примерами можете ознакомиться тут - [usage_examples](https://github.com/Reversenant/ptnad-client-test/blob/main/docs/ru/usage_examples.ipynb)
+
 ## ✅ Возможности
 
 🔐 Аутентификация  
@@ -67,7 +69,11 @@ print(f"Результаты: {result}")
 
 Мы открыты для любых идей, предложений и улучшений!
 
----
+![image](../assets/pic_left.svg)
 
-### 📜 Лицензия  
-Этот проект лицензирован под MIT License – подробности см. в файле LICENSE.
+PT NAD Client — часть экосистемы открытых SDK, созданной для упрощения интеграции с продуктами компании.
+Вы также можете ознакомиться с другими проектами:
+
+🔹[py-ptsandbox](https://github.com/Security-Experts-Community/py-ptsandbox) — Python-библиотека для асинхронной работы с API PT Sandbox
+
+🔹[sandbox-cli](https://github.com/Security-Experts-Community/sandbox-cli) — CLI-инструмент для удобной работы с PT Sandbox
