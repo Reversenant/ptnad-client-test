@@ -1,5 +1,5 @@
 [project]
-name = "ptnad"
+name = "ptnad-client"
 version = "0.1.0"
 description = "Python library for interacting with the PT NAD API"
 readme = "README.md"
@@ -20,6 +20,12 @@ dependencies = [
     "mkdocs-static-i18n",
     "mkdocstrings-python"
 ]
+
+[project.urls]
+Homepage = "https://github.com/Reversenant/ptnad-client-test"
+Documentation = "https://reversenant.github.io/ptnad-client/"
+Repository = "https://github.com/Reversenant/ptnad-client-test"
+Issues = "https://github.com/Reversenant/ptnad-client-test/issues"
 
 [build-system]
 requires = ["hatchling"]
