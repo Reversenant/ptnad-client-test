@@ -2,54 +2,30 @@ site_name: ptnad-client
 site_description: Documentation of the ptnad-client project
 site_url: https://reversenant.github.io/ptnad-client-test/
 
-repo_url: https://github.com/Security-Experts-Community/ptnad-client
-repo_name: ptnad-client
-
 docs_dir: docs
+use_directory_urls: true
 theme:
   name: material
-  icon:
-    repo: fontawesome/brands/github
-  favicon: assets/main_logo.svg
-  logo: assets/main_logo.svg
+  font: false
   palette:
-    - scheme: default
-      primary: white
-      toggle:
-        icon: material/toggle-switch
-        name: Dark
-    - scheme: slate
-      primary: black
-      toggle:
-        icon: material/toggle-switch-off
-        name: Light
+    primary: blue
   features:
-    - content.code.copy
-    - content.code.annotate
-    - content.tabs.link
-    - navigation.instant
     - navigation.expand
     - navigation.sections
-    - navigation.top
+    - navigation.tabs
+    - toc.follow
+    - toc.integrate
 
 markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - attr_list
-  - md_in_html
-  - pymdownx.blocks.caption
-  - pymdownx.details
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
 
 plugins:
   - search
