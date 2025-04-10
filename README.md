@@ -1,4 +1,4 @@
-![image](docs/assets/logo_with_text.svg)
+![image](https://github.com/Reversenant/ptnad-client-test/raw/main/docs/assets/logo_with_text.svg)
 
 ![PyPI](https://img.shields.io/pypi/v/ptnad)
 
@@ -29,7 +29,7 @@ result = client.bql.execute(query)
 print(f"Results: {result}")
 ```
 
-![image](docs/assets/pic_left.svg)
+![image](https://github.com/Reversenant/ptnad-client-test/raw/main/docs/assets/pic_left.svg)
 
 ## ✅ Features
 
