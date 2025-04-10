@@ -29,7 +29,7 @@ result = client.bql.execute(query)
 print(f"Results: {result}")
 ```
 
-![image](https://github.com/Reversenant/ptnad-client-test/raw/main/docs/assets/pic_left.svg)
+You can find detailed instructions and examples here - [usage_examples](https://github.com/Reversenant/ptnad-client-test/blob/main/docs/en/usage_examples.ipynb)
 
 ## ✅ Features
 
@@ -67,7 +67,11 @@ Want to contribute? Check out the following:
 
 We welcome all ideas, suggestions, and improvements!
 
----
+![image](https://github.com/Reversenant/ptnad-client-test/raw/main/docs/assets/pic_left.svg)
 
-### 📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+PT NAD Client is part of an open SDK ecosystem designed to simplify integration with our products.
+Check out other related projects in the ecosystem:
+
+🔹[py-ptsandbox](https://github.com/Security-Experts-Community/py-ptsandbox) — A python library for asynchronous interactions with the PT Sandbox API
+
+🔹[sandbox-cli](https://github.com/Security-Experts-Community/sandbox-cli) — CLI instrument for easy working with PT Sandbox
